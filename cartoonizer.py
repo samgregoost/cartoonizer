@@ -49,9 +49,7 @@ def cartoonize(image):
     output = output.reshape((x, y, c))
     output = cv2.cvtColor(output, cv2.COLOR_HSV2RGB)
 
-    contours, _ = cv2.findContours(edge,
-                                   cv2.RETR_EXTERNAL,
-                                   cv2.CHAIN_APPROX_NONE)
+    im2, contours, _ = cv2.findContours(edge, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     # for i in range(len(contours)):
     #     tmp = contours[i]
     #     contours[i] = cv2.approxPolyDP(tmp, 2, False)
